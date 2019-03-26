@@ -1,0 +1,292 @@
+<html>
+
+<head>
+    <title>Acheron</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="shortcut icon" href="favicon.ico" type='image/x-icon' sizes="16x16">
+    <!-- <link rel="stylesheet" href="./css/fontawesome/css/fontawesome.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,100,100italic,300,500,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script> -->
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top affix-top" data-spy="affix" data-offset-top="100">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand mt-0" href="index.html">
+                        <span>
+                            <img src="./images/Logo.fw.png" class="applogo img-responsive" id="logo">
+                        </span>
+                    </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse row" id="navbarContent">
+                    <div class="col-md-12 col-sm-12">
+                        <ul class="list-inline navbar-contact-info mt-0">
+                            <li class="border-right-0 list-inline-item">
+                                <i class="fa fa-phone navbar-icon"></i>
+                                <span>
+                                    <a href="#" class="navbar-contact-links navbar-border-right">+91 40 48551939</a>
+                                </span>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <i class="fa fa-envelope navbar-icon"></i>
+                                <a id="navbarmailinfo" href="#" class="pr-2 navbar-contact-links">
+                                    <span class="navbar-contact-links navbar-border-right">contact@acheron-tech.com</span>
+                                </a>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <i class="fa fa-user navbar-icon"></i>
+                                <a id="navbarsupportinfo" href="#">
+                                    <span class="navbar-contact-links navbar-border-right">Support</span>
+                                </a>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <a target="_blank" href="https://www.facebook.com/AcheronTechnologies/?ref=br_rs">
+                                    <i class="fa fa-facebook  navbar-icon"></i>
+                                </a>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <a target="_blank" href="https://www.linkedin.com/company/acheron-software-consultancy/">
+                                    <i class="fa fa-linkedin navbar-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 com-sm-12">
+                        <ul class="navbar-nav nav navbar-right float-right">
+                            <span class="nav-item menuitem dropdown">
+                                <li class="active">
+                                    <a class="nav-link" href="index.html">HOME</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="index.html#objectives">Business objectives</a>
+                                        <a class="dropdown-item" href="index.html#we-offer">What we offer</a>
+                                        <a class="dropdown-item" href="index.html#facts">Facts</a>
+                                        <a class="dropdown-item" href="index.html#partners">Customers & Partners</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="aboutus.html">ABOUT US</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="#aboutus.html#mission">Mission</a>
+                                        <a class="dropdown-item" href="#aboutus.html#vision">Vision</a>
+                                        <a class="dropdown-item" href="#aboutus.html#employees">Our Team</a>
+                                        <a class="dropdown-item" href="#modal">Contact Us</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="./products.html">PRODUCTS</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="products.html#mpmtabinfo">Media Project Management</a>
+                                        <a class="dropdown-item" href="products.html#mlrtab">MLR for Life Sciences</a>
+                                        <a class="dropdown-item" href="products.html#marketing">Marketing & Communications</a>
+                                        <a class="dropdown-item" href="products.html#environment">Environment Health & Safety Frameworks</a>
+                                        <a class="dropdown-item" href="products.html#frameworks">Frameworks</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="services.html">SERVICES</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="services.html#bpm">BPM-Process Suite</a>
+                                        <a class="dropdown-item" href="services.html#otmm">OTMM-Open Text Media Management</a>
+                                        <a class="dropdown-item" href="services.html#creative">Creative Review</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="index.html">CLOUD</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="cloud/coreServices.html">Core Services</a>
+                                        <a class="dropdown-item" href="cloud/migrationServices.html">Migration Services</a>
+                                        <a class="dropdown-item" href="cloud/AWS.html">AWS CloudFormation</a>
+                                        <a class="dropdown-item" href="cloud/cloudType.html">Cloud Type</a>
+                                        <a class="dropdown-item" href="cloud/devOps.html">DevOps and Code Deploy</a>
+                                        <a class="dropdown-item" href="cloud/managedHosting.html">Managed Hosting</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="career.html">CAREERS</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="career.html#why">Why Acheron ?</a>
+                                        <a class="dropdown-item" href="career.html#what">What we look for</a>
+                                        <a class="dropdown-item" href="career.html#benefits">Our Benefits & Perks</a>
+                                        <a class="dropdown-item" href="career.html#openings">Current Openings</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem">
+                                <li class="">
+                                    <a class="nav-link" href="login.html">LOGIN</a>
+                                </li>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="pt-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-5">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Log In</h5>
+                            <form class="form-signin">
+                                <div class="form-label-group pt-3">
+                                    <label for="inputEmail" class="pb-2">Email address</label>
+                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                </div>
+
+                                <div class="form-label-group pt-3">
+                                    <label for="inputPassword" class="pb-2">Password</label>
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                </div>
+                                <div class=" float-right pt-4">
+                                    <button class="btn btn-job text-uppercase" type="submit">Log in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="navbar-fixed-bottom">
+        <div class="container">
+            <div class="row footer-links">
+                <div class="col-2 offset-1 company">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Company</h4>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="aboutus.html">About us</a>
+                                </li>
+                                <li>
+                                    <a href="products.html">Products</a>
+                                </li>
+                                <li>
+                                    <a href="cloud.html">Cloud</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li>
+                                    <a href="career.html">Careers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 offset-1 social">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Social</h4>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/acheron-software-consultancy/" target="_blank">
+                                        <span>
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </span>LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/AcheronTechnologies/?ref=br_rs" target="_blank">
+                                        <span>
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>Facebook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 offset-1 address">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Contact</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <ul class="col-5">
+                                    <p>
+                                        <strong>Hyderabad Office</strong>
+                                        <br> Office No - 416,
+                                        <br> Manjeera Majestic Commercial,
+                                        <br> KPHB Road,
+                                        <br> Kukatpally, Hyderabad- 500085,
+                                        <br> Telangana, India
+                                        <br> +91 40 4855 1939
+                                    </p>
+                                </ul>
+                                <ul class="col-5">
+                                    <p>
+                                        <strong>Coimbatore Office</strong>
+                                        <br> Office No - 112, Third Floor
+                                        <br> 5th Street, Extn,
+                                        <br> 100 Feet Road, Gandhipuram,
+                                        <br> Coimbatore- 641012,
+                                        <br> Tamil Nadu, India.
+                                        <br> +91 422 420 3619
+                                    </p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <p> Acheron Software Consultancy Pvt. Ltd. Copyright &copy; 2018. All rights reserved</p>
+                    </div>
+                    <div class="col-3">
+                        <a href='mailto:contact@acheron-tech.com'>
+                            <p class="text-right">
+                                <span>
+                                    <i class="fa fa-envelope"></i>
+                                </span>contact@acheron-tech.com </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

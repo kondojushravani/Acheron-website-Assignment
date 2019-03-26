@@ -1,0 +1,382 @@
+<html>
+
+<head>
+    <title>Acheron</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="shortcut icon" href="favicon.ico" type='image/x-icon' sizes="16x16">
+    <!-- <link rel="stylesheet" href="./css/fontawesome/css/fontawesome.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,100,100italic,300,500,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script> -->
+    <style>
+        .blinker-text {
+            animation: blinker 0.5s linear infinite;
+            color: #cac32d;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top affix-top" data-spy="affix" data-offset-top="100">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand mt-0" href="index.html">
+                        <span>
+                            <img src="./images/Logo.fw.png" class="applogo img-responsive" id="logo">
+                        </span>
+                    </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse row" id="navbarContent">
+                    <div class="col-md-12 com-sm-12">
+                        <ul class="navbar-nav nav navbar-right float-right">
+                            <span class="nav-item menuitem dropdown">
+                                <li class="active">
+                                    <a class="nav-link" href="index.html">HOME</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="index.html#objectives">Business objectives</a>
+                                        <a class="dropdown-item" href="index.html#we-offer">What we offer</a>
+                                        <a class="dropdown-item" href="index.html#facts">Facts</a>
+                                        <a class="dropdown-item" href="index.html#partners">Customers & Partners</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="aboutus.html">ABOUT US</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="aboutus.html#mission">Mission</a>
+                                        <a class="dropdown-item" href="aboutus.html#vision">Vision</a>
+                                        <a class="dropdown-item" href="aboutus.html#employees">Our Team</a>
+                                        <a class="dropdown-item" href="#modal">Contact Us</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="./products.html">PRODUCTS</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="products.html#mpmtab">Media Project Management</a>
+                                        <a class="dropdown-item" href="products.html#mlrtab">MLR for Life Sciences</a>
+                                        <a class="dropdown-item" href="products.html#marketing">Marketing & Communications</a>
+                                        <a class="dropdown-item" href="products.html#environment">Environment Health & Safety Frameworks</a>
+                                        <a class="dropdown-item" href="products.html#frameworks">Frameworks</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="services.html">SERVICES</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="services.html#bpm">BPM-Process Suite</a>
+                                        <a class="dropdown-item" href="services.html#otmm">OTMM-Open Text Media Management</a>
+                                        <a class="dropdown-item" href="services.html#creative">Creative Review</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="index.html">CLOUD</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="cloud/coreServices.html">Core Services</a>
+                                        <a class="dropdown-item" href="cloud/migrationServices.html">Migration Services</a>
+                                        <a class="dropdown-item" href="cloud/AWS.html">AWS CloudFormation</a>
+                                        <a class="dropdown-item" href="cloud/cloudType.html">Cloud Type</a>
+                                        <a class="dropdown-item" href="cloud/devOps.html">DevOps and Code Deploy</a>
+                                        <a class="dropdown-item" href="cloud/managedHosting.html">Managed Hosting</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="career.html">CAREERS</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="career.html#why">Why Acheron ?</a>
+                                        <a class="dropdown-item" href="career.html#what">What we look for</a>
+                                        <a class="dropdown-item" href="career.html#benefits">Our Benefits & Perks</a>
+                                        <a class="dropdown-item" href="career.html#openings">Current Openings</a>
+                                    </div>
+                                </div>
+                            </span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="job-description">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12">
+                    <div class="job-desc">
+                        <h2 class="job-heading">Assistant Project Manager</h2>
+                        <h3>Experience</h3>
+                        <h4>5-8 years</h4>
+                        <h3>No. of Openings</h3>
+                        <h4>1</h4>
+                        <h3>Key competencies</h3>
+                        <ul>
+                            <li>Assisting with the management of projects through all phases (design, construction, and close-out)
+                            </li>
+                            <li>Assisting with the management of projects to completion, on-time, within budget, and within scope
+                                of work
+                            </li>
+                            <li>Production of reports, summaries, and briefings using Microsoft Word, Excel, and PowerPoint</li>
+                            <li>SCRUM Master</li>
+                            <li>Sprint planner</li>
+                            <li>Work with the solution architect and developer and chase the development activities
+                            </li>
+                            <li>Create a project plan</li>
+                            <li>Document the user stories in JIRA</li>
+                            <li>Product Manager, responsible for the product features, road maps etc... and communicate the same
+                                with the customer</li>
+                            <li>Demonstrate the product demos to the customer</li>
+                            <li>Willing to travel to US/Europe for a short trip 1-2 weeks</li>
+                            <li>Prepare a weekly status report and share with the management
+                            </li>
+                            <li>Functional expert and being responsible for the functionality of the product/solutions
+                            </li>
+                            <li>Ability and willing to learn functionality on the followings system
+                                <ul>
+                                    <li>
+                                        Oracle E-Business Suite
+                                    </li>
+                                    <li>JD Edwards</li>
+                                    <li>ServicesNow</li>
+                                    <li>Workday</li>
+                                    <li>SalesForce.com</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h3>Personal Skills</h3>
+                        <ul>
+                            <li>The ability to communicate effectively in writing and verbally</li>
+                            <li>The ability to multi-task</li>
+                        </ul>
+                    </div>
+                    <!-- <a href="#" data-target="modal" class="btn btn-job applyjob" data-load-url="application.html">Apply Now</a> -->
+                    <button type="button" class="btn btn-job applyjob" data-toggle="modal" data-target="#applicationformModal">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="navbar-fixed-bottom">
+        <div class="container">
+            <div class="row footer-links">
+                <div class="col-2 offset-1 company">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Company</h4>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="aboutus.html">About us</a>
+                                </li>
+                                <li>
+                                    <a href="products.html">Products</a>
+                                </li>
+                                <li>
+                                    <a href="cloud.html">Cloud</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li>
+                                    <a href="career.html">Careers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 offset-1 social">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Social</h4>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/acheron-software-consultancy/" target="_blank">
+                                        <span>
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </span>LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/AcheronTechnologies/?ref=br_rs" target="_blank">
+                                        <span>
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>Facebook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 offset-1 address">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Contact</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <ul class="col-5">
+                                    <p>
+                                        <strong>Hyderabad Office</strong>
+                                        <br> Office No - 416,
+                                        <br> Manjeera Majestic Commercial,
+                                        <br> KPHB Road,
+                                        <br> Kukatpally, Hyderabad- 500085,
+                                        <br> Telangana, India
+                                        <br> +91 40 4855 1939
+                                    </p>
+                                </ul>
+                                <ul class="col-5">
+                                    <p>
+                                        <strong>Coimbatore Office</strong>
+                                        <br> Office No - 112, Third Floor
+                                        <br> 5th Street, Extn,
+                                        <br> 100 Feet Road, Gandhipuram,
+                                        <br> Coimbatore- 641012,
+                                        <br> Tamil Nadu, India.
+                                        <br> +91 422 420 3619
+                                    </p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <p> Acheron Software Consultancy Pvt. Ltd. Copyright &copy; 2018. All rights reserved</p>
+                    </div>
+                    <div class="col-3">
+                        <a href='mailto:contact@acheron-tech.com'>
+                            <p class="text-right">
+                                <span>
+                                    <i class="fa fa-envelope"></i>
+                                </span>contact@acheron-tech.com </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="applicationformModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100">Application Form</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="applicationform">
+                        <!-- <div class="row"> -->
+                        <!-- <div class="col-md-12 col-sm-12"> -->
+                        <div class="form-group row pt-5">
+                            <label for="name" class="col-3 pl-5">Name :
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="text" class="form-control col-8" id="name" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="contactno" class="col-3 pl-5">Contact Number:
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="number" class="form-control col-8" id="contactno">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-3 pl-5">Email Id:
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="email" class="form-control col-8" id="mail">
+                        </div>
+                        <div class="form-group row">
+                            <label for="altcontactno" class="col-3 pl-5">Alternate Contact Number:</label>
+                            <input type="number" class="form-control col-8" id="altcontactno">
+                        </div>
+                        <div class="form-group row">
+                            <label for="degree" class="col-3 pl-5">Degree :
+                                <span class="mandatory">*</span>
+                            </label>
+                            <select class="form-control col-8" id="degreeopt">
+                                <option>BA</option>
+                                <option>B'TECH</option>
+                                <option>MCA</option>
+                                <option>M'TECH</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="role" class="col-3 pl-5">Role:
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="text" class="form-control col-8" id="role">
+                        </div>
+                        <div class="row">
+                            <div class="custom-file">
+                                <label for="resume" class="col-3 pl-5">Upload Resume:
+                                    <span class="mandatory">*</span>
+                                </label>
+                                <input type="file" id="myFile" name="filename2" class="col-8">
+                                <!-- <input type="file" class="custom-file-input col-8" id="customFile"> -->
+                                <!-- <label class="custom-file-label col-8" for="customFile">Choose file</label> -->
+                                <p class="doc-accept col-5 text-right">.doc, .docx, .pdf</p>
+                            </div>
+                        </div>
+
+                        <!-- </div> -->
+                        <!-- </div> -->
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-job" data-dismiss="modal" id="applicationsubmit" disabled>Submit</button>
+                    <button type="button" class="btn btn-job" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./firebase.js"></script>
+    <script src="./Js/jQuery.min.js"></script>
+    <script src="./Js/bootstrap.min.js"></script>
+    <script src="./Js/form.js"></script>
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>

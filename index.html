@@ -1,0 +1,614 @@
+<html>
+
+<head>
+    <title>Acheron</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="shortcut icon" href="favicon.ico" type='image/x-icon' sizes="16x16">
+    <!-- <link rel="stylesheet" href="./css/fontawesome/css/fontawesome.min.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,100,100italic,300,500,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"> -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="./firebase.js"></script>
+    <script>
+    </script>
+    <script src="./Js/jQuery.min.js"></script>
+    <script src="./Js/bootstrap.min.js"></script>
+    <script src="./login.js"></script>
+    <script src="./Js/main.js"></script>
+    <style>
+        .blinker-text {
+            animation: blinker 0.5s linear infinite;
+            color: #cac32d;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top affix-top" data-spy="affix" data-offset-top="100">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand mt-0" href="index.html">
+                        <span>
+                            <img src="./images/Logo.fw.png" class="applogo img-responsive" id="logo">
+                        </span>
+                    </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse row" id="navbarContent">
+                    <div class="col-md-12 col-sm-12">
+                        <ul class="list-inline navbar-contact-info mt-0">
+                            <li class="border-right-0 list-inline-item">
+                                <i class="fa fa-phone navbar-icon"></i>
+                                <span>
+                                    <a href="#" class="navbar-contact-links navbar-border-right">+91 40 48551939</a>
+                                </span>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <i class="fa fa-envelope navbar-icon"></i>
+                                <a id="navbarmailinfo" href="#" class="pr-2 navbar-contact-links">
+                                    <span class="navbar-contact-links navbar-border-right">contact@acheron-tech.com</span>
+                                </a>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <i class="fa fa-user navbar-icon"></i>
+                                <a id="navbarsupportinfo" href="#">
+                                    <span class="navbar-contact-links navbar-border-right">Support</span>
+                                </a>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <a target="_blank" href="https://www.facebook.com/AcheronTechnologies/?ref=br_rs">
+                                    <i class="fa fa-facebook  navbar-icon"></i>
+                                </a>
+                            </li>
+                            <li class="border-right-0 list-inline-item">
+                                <a target="_blank" href="https://www.linkedin.com/company/acheron-software-consultancy/">
+                                    <i class="fa fa-linkedin navbar-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 com-sm-12">
+                        <ul class="navbar-nav nav navbar-right float-right">
+                            <span class="nav-item menuitem dropdown">
+                                <li class="active">
+                                    <a class="nav-link" href="index.html">HOME</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="index.html#objectives">Business objectives</a>
+                                        <a class="dropdown-item" href="index.html#we-offer">What we offer</a>
+                                        <a class="dropdown-item" href="index.html#facts">Facts</a>
+                                        <a class="dropdown-item" href="index.html#partners">Customers & Partners</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="aboutus.html">ABOUT US</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="#aboutus.html#mission">Mission</a>
+                                        <a class="dropdown-item" href="#aboutus.html#vision">Vision</a>
+                                        <a class="dropdown-item" href="#aboutus.html#employees">Our Team</a>
+                                        <a class="dropdown-item" href="#modal">Contact Us</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="./products.html">PRODUCTS</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="products.html#mpmtabinfo">Media Project Management</a>
+                                        <a class="dropdown-item" href="products.html#mlrtab">MLR for Life Sciences</a>
+                                        <a class="dropdown-item" href="products.html#marketing">Marketing & Communications</a>
+                                        <a class="dropdown-item" href="products.html#environment">Environment Health & Safety Frameworks</a>
+                                        <a class="dropdown-item" href="products.html#frameworks">Frameworks</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="services.html">SERVICES</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="services.html#bpm">BPM-Process Suite</a>
+                                        <a class="dropdown-item" href="services.html#otmm">OTMM-Open Text Media Management</a>
+                                        <a class="dropdown-item" href="services.html#creative">Creative Review</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="index.html">CLOUD</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="cloud/coreServices.html">Core Services</a>
+                                        <a class="dropdown-item" href="cloud/migrationServices.html">Migration Services</a>
+                                        <a class="dropdown-item" href="cloud/AWS.html">AWS CloudFormation</a>
+                                        <a class="dropdown-item" href="cloud/cloudType.html">Cloud Type</a>
+                                        <a class="dropdown-item" href="cloud/devOps.html">DevOps and Code Deploy</a>
+                                        <a class="dropdown-item" href="cloud/managedHosting.html">Managed Hosting</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link" href="career.html">CAREERS</a>
+                                </li>
+                                <div class="content">
+                                    <div class="dropdown-menu dropdown-content p-0">
+                                        <a class="dropdown-item" href="career.html#why">Why Acheron ?</a>
+                                        <a class="dropdown-item" href="career.html#what">What we look for</a>
+                                        <a class="dropdown-item" href="career.html#benefits">Our Benefits & Perks</a>
+                                        <a class="dropdown-item" href="career.html#openings">Current Openings</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="nav-item menuitem">
+                                    <li class="">
+                                        <a class="nav-link" href="login.html">LOGIN</a>
+                                    </li>
+                                </span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="header-image row">
+            <div class="col-md-12 col-sm-12 banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 banner-content">
+                            <div class="souter">
+                                <div class="sinner">
+                                    <h1>
+                                        "We truly work on the"
+                                        <br>
+                                        <span>GOAL ORIENTED ARCHITECTURE</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="business-objective bg-light" id="objectives">
+        <div class="container  text-center">
+            <div class="section-content">
+                <h2 class="heading">Business Objectives</h2>
+                <p class="intro">
+                    At Acheron, we aim to provide solutions which are designed to help our Customers, take advantage of the Opportunities offered
+                    thorough digital revolution. We connect information across the enterprise with the people and systems
+                    with our Products, services and User experiences. Our solutions which are on top of PSA, manages the
+                    entire content lifecycle with workflows and features for distribution and publishing the assets. Our
+                    PSA, further helps in automating the business process thereby fixing, the business challenges from a
+                    single platform.
+                </p>
+            </div>
+            <div class="row p-3">
+                <div class='col-4 text-center'>
+                    <img src="./images/business-objectives/PromoteClients.svg" class="img-responsive svgImage client" alt='promote clients' />
+                    <h4 class="pt-2">Promote Clients</h4>
+                    <p>Promote Clients, by making their business process easier through Open Text Content Server and ECM system.
+                    </p>
+                </div>
+                <div class='col-4 text-center'>
+                    <img src="./images/business-objectives/Developanddeploy.svg" class="img-responsive develop svgImage" alt="develop" />
+                    <h4 class="pt-2">Develop and deploy</h4>
+                    <p>Develop and deploy tailored applications for the Client's specific requirements without the need for
+                        the basic web technologies.</p>
+                </div>
+                <div class='col-4 text-center'>
+                    <img src="./images/business-objectives/Ensurereliability.svg" class="img-responsive svgImage reliability " alt="reliability"
+                    />
+                    <h4 class="pt-2">Ensure reliability</h4>
+                    <p>Ensure reliability of automated content reports and role-specific dashboards through consistent availability
+                        of Metadata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="whatweoffer" id="we-offer">
+        <div class="container text-center">
+            <div class="section-content">
+                <h2 class="heading">What We Offer</h2>
+                <p class="intro">We are a Product &amp; Services Company specialized in the OpenText Products like Process Suite, Media Management,
+                    Creative Review, Content Server etc. Following are some of our Product offerings</p>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1">
+                    <div class="row">
+                        <div class="col-5 offset-1">
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/MediaProjectManagement.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Media Project Management</h5>
+                                    </a>
+                                    <span>
+                                        <a class="blinker-text" href="#">"Download"
+                                            <b>MPM Release 16.5 Highlights</b>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/RequestManagement .svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Request Management</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/ActionManagement.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Action Management</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/AuditInsuranceManagement.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Audit / Insurance Management</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/ProcessSuiteAccelerator.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Process Suite Management</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Purchase Order Approval Management</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/MediaProjectManagement.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Mobile Solutions</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/transf.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>External User provisioning</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5 offset-1">
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/CopyApproval.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>MLR for Life Sciences</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/IncidentManagement.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Incident Management</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/corective-action.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Corrective Action Reports</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/EHSPackage.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>EHS Package</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/SafetyImagingPackage.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Safety Imaging Package</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/flow.svg" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Translations Workflow</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-2">
+                                    <img src="./images/" class="watweofferimg">
+                                </div>
+                                <div class="col-10">
+                                    <a href="products.html">
+                                        <h5>Digitize Docs</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fact" id="facts">
+        <div class="container text-center">
+            <h2 class="heading">Facts</h2>
+            <div class="row">
+                <div class="col-4">
+                    <h4>Physical offices</h4>
+                    <div class="row">
+                        <div class="col-4 offset-2 text-center">
+                            <div class="factsimg physicalimg">
+                                <img src="./images/Hyderabad .svg">
+                            </div>
+                            <p>Hyderabad</p>
+                        </div>
+                        <div class="col-4">
+                            <div class="factsimg physicalimg">
+                                <img src="./images/Coimbatore.svg">
+                            </div>
+                            <p>Coimbatore</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 employee">
+                    <h4>Employess / Consultants</h4>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div class="factsimg employeeimg">
+                                <img src="./images/Hyderabad .svg">
+                            </div>
+                            <p>50+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h4>Customer Presence</h4>
+                    <div class="row">
+                        <div class="col-4 offset-2 text-center">
+                            <div class="factsimg customerimg">
+                                <img src="./images/North_America.svg">
+                            </div>
+                            <p>North America</p>
+                        </div>
+                        <div class="col-4">
+                            <div class="factsimg customerimg">
+                                <img src="./images/Europe.svg">
+                            </div>
+                            <p>Europe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clients" id="partners">
+        <div class="container">
+            <h2 class="heading">Customers & Partners</h2>
+            <div class="row main-container">
+                <div class="col-5">
+                    <h2 class="heading text-left">Trusted by Thousands</h2>
+                    <p>Our policy is to work with potential partners to ensure a mutually successful business endeavour. The
+                        industry specific knowledge that we have gained over the years through our Partners, have helped
+                        us understand the Operational context of the Customer’s requirement in a better way. Thereby the
+                        tailored applications that we build on top of the Open Text products, with the wider pool of technical
+                        expertise has mutually helped us to achieve our strategic goals, faster.</p>
+                    <div class="row heart">
+                        <div class="col-md-2 col-xs-4">
+                            <img src="./images/heart.png" />
+                        </div>
+                        <div class="col-md-10 col-xs-8">
+                            <p class="text-left">You're in good company.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 client-logo">
+                    <div class="client-row">
+                        <div class="row">
+                            <div class="">
+                                <a href='http://www.opentext.com' target="_blank">
+                                    <img style="width: 175px;" src="./images/clients/OT_client.svg" class="img-responsive f1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="logo-cont logo-cont-aws">
+                                <a href="https://aws.amazon.com/partners/find/partnerdetails/?n=Acheron%20Software%20Consultancy%20Private%20Limited&amp;id=0010L00001qG3KaQAK"
+                                    target="_blank">
+                                    <img src="./images/clients/aws_logo.png" class="img-responsive f1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="logo-cont logo-cont-fz">
+                                <a href='http://www.f1studioz.com' target="_blank">
+                                    <img src="./images/clients/f1.png" class="img-responsive f1">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="navbar-fixed-bottom">
+        <div class="container">
+            <div class="row footer-links">
+                <div class="col-2 offset-1 company">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Company</h4>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="aboutus.html">About us</a>
+                                </li>
+                                <li>
+                                    <a href="products.html">Products</a>
+                                </li>
+                                <li>
+                                    <a href="cloud.html">Cloud</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li>
+                                    <a href="career.html">Careers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 offset-1 social">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Social</h4>
+                        </div>
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/acheron-software-consultancy/" target="_blank">
+                                        <span>
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </span>LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/AcheronTechnologies/?ref=br_rs" target="_blank">
+                                        <span>
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>Facebook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 offset-1 address">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Contact</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <ul class="col-5">
+                                    <p>
+                                        <strong>Hyderabad Office</strong>
+                                        <br> Office No - 416,
+                                        <br> Manjeera Majestic Commercial,
+                                        <br> KPHB Road,
+                                        <br> Kukatpally, Hyderabad- 500085,
+                                        <br> Telangana, India
+                                        <br> +91 40 4855 1939
+                                    </p>
+                                </ul>
+                                <ul class="col-5">
+                                    <p>
+                                        <strong>Coimbatore Office</strong>
+                                        <br> Office No - 112, Third Floor
+                                        <br> 5th Street, Extn,
+                                        <br> 100 Feet Road, Gandhipuram,
+                                        <br> Coimbatore- 641012,
+                                        <br> Tamil Nadu, India.
+                                        <br> +91 422 420 3619
+                                    </p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <p> Acheron Software Consultancy Pvt. Ltd. Copyright &copy; 2018. All rights reserved</p>
+                    </div>
+                    <div class="col-3">
+                        <a href='mailto:contact@acheron-tech.com'>
+                            <p class="text-right">
+                                <span>
+                                    <i class="fa fa-envelope"></i>
+                                </span>contact@acheron-tech.com </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
