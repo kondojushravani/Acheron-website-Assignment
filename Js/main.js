@@ -7,6 +7,10 @@ $(document).ready(function () {
   //     }
   //   });
   
+  var user = sessionStorage.getItem("user");
+  // if(user){
+  //   $("#applynowbtn").addClass("d-none");
+  // }
   //add active class
   $("#icons-container-panel li").click(function () {
     $("#icons-container-panel li").removeClass("active");
@@ -18,5 +22,13 @@ $(document).ready(function () {
     var fileName = $(this).val().split("\\").pop();
     $(this).siblings("#myFile").addClass("selected").html(fileName);
   });
+  // $("#applicationsubmit").on('click',function(){
+  //   $('#applicationformModal').modal('hide');
+  //   $("#appliedinfo").removeClass("d-none");
+  //   $("#applynowbtn").addClass("d-none")
+  // })
+  $("#mpmpdf").on('click',function(){
+    
+  })
 
 });

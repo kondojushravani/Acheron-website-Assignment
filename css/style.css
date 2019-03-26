@@ -754,14 +754,16 @@ color: #ffffff;
     color: #b41818;
 }
 .modal-dialog {
-    top: 47%;
-    left: 25%;
-    transform: translate(-50%, -50%) !important;
+    top: 80px;
+    text-align: center;
 }
 .doc-accept {
     text-align: left;
     font-size: 13px;
     margin: 0;
+}
+.applied{
+    color: #cac32d;
 }
 
 

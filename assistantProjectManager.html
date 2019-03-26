@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script> -->
-    <style>
+   <style>
         .blinker-text {
             animation: blinker 0.5s linear infinite;
             color: #cac32d;
@@ -123,6 +123,15 @@
                                     </div>
                                 </div>
                             </span>
+                            <span class="nav-item menuitem dropdown">
+                                <li class="">
+                                    <a class="nav-link">
+                                        <button id="logoutbtn" type="button" class="btn btn-job applyjob" data-toggle="modal">
+                                            LOG OUT
+                                        </button>
+                                    </a>
+                                </li>
+                            </span>
                         </ul>
                     </div>
                 </div>
@@ -180,9 +189,12 @@
                         </ul>
                     </div>
                     <!-- <a href="#" data-target="modal" class="btn btn-job applyjob" data-load-url="application.html">Apply Now</a> -->
-                    <button type="button" class="btn btn-job applyjob" data-toggle="modal" data-target="#applicationformModal">
+                    <button id="applynowbtn" type="button" class="btn btn-job applyjob" data-toggle="modal">
                         Apply Now
                     </button>
+                    <div class="pt-5 d-none" id="appliedinfo">
+                        <h2 class="applied">"You have applied for this job"</h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -312,23 +324,27 @@
                             <label for="name" class="col-3 pl-5">Name :
                                 <span class="mandatory">*</span>
                             </label>
-                            <input type="text" class="form-control col-8" id="name" required>
+                            <input type="text" class="form-control col-8" id="name">
+                            <p id="nameerrormsg" class="d-none">Enter Valid Name</p>
                         </div>
                         <div class="form-group row">
                             <label for="contactno" class="col-3 pl-5">Contact Number:
                                 <span class="mandatory">*</span>
                             </label>
                             <input type="number" class="form-control col-8" id="contactno">
+                            <p class="errormsg d-none">Enter Valid Contact Number</p>
                         </div>
                         <div class="form-group row">
                             <label for="email" class="col-3 pl-5">Email Id:
                                 <span class="mandatory">*</span>
                             </label>
                             <input type="email" class="form-control col-8" id="mail">
+                            <p class="errormsg d-none">Enter Valid Email</p>
                         </div>
                         <div class="form-group row">
                             <label for="altcontactno" class="col-3 pl-5">Alternate Contact Number:</label>
                             <input type="number" class="form-control col-8" id="altcontactno">
+                            <p class="errormsg d-none">Enter Valid alternate contact number</p>
                         </div>
                         <div class="form-group row">
                             <label for="degree" class="col-3 pl-5">Degree :
@@ -346,6 +362,7 @@
                                 <span class="mandatory">*</span>
                             </label>
                             <input type="text" class="form-control col-8" id="role">
+                            <p class="errormsg d-none">Enter Valid Role</p>
                         </div>
                         <div class="row">
                             <div class="custom-file">
@@ -356,6 +373,7 @@
                                 <!-- <input type="file" class="custom-file-input col-8" id="customFile"> -->
                                 <!-- <label class="custom-file-label col-8" for="customFile">Choose file</label> -->
                                 <p class="doc-accept col-5 text-right">.doc, .docx, .pdf</p>
+                                <p class="errormsg d-none">choose only valid file types</p>
                             </div>
                         </div>
 
@@ -365,18 +383,55 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-job" data-dismiss="modal" id="applicationsubmit" disabled>Submit</button>
-                    <button type="button" class="btn btn-job" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-job"  id="applicationsubmit">Submit</button>
+                    <button type="button" class="btn btn-job" id="closeapplicationbtn" data-dismiss="modal">Close</button>
                 </div>
-
             </div>
         </div>
     </div>
-    <script src="./firebase.js"></script>
+    <div class="modal fade" id="loginformModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100">Login Form</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="applicationform">
+                        <div class="form-group row pt-5">
+                            <label for="username" class="col-3 pl-3">Name :
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="text" class="form-control col-8" id="uname">
+                            <p id="nameerrormsg" class="d-none"></p>
+                        </div>
+                        <div class="form-group row">
+                            <label for="contactno" class="col-3 pl-3">Password:
+                                <span class="mandatory">*</span>
+                            </label>
+                            <input type="password" class="form-control col-8" id="pass">
+                            <p class="errormsg d-none"></p>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-job"  id="login" data-dismiss="modal">Login</button>
+                    <button type="button" class="btn btn-job" id="closelogin" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="./Js/jQuery.min.js"></script>
+    <script src="./firebase.js"></script>
     <script src="./Js/bootstrap.min.js"></script>
-    <script src="./Js/form.js"></script>
     <script src="./Js/main.js"></script>
+    <script src="./Js/form.js"></script>
 </body>
 
 </html>
